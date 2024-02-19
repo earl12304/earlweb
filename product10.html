@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Earl Nike Collection Shop</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+    <div class="header">
+        <div class="navbar">
+            <div class="logo">
+                <img src="Earl_Collection__1.png" width="150px">
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="account.html">Account</a></li>
+                </ul>
+            </nav>
+            <a href="cart.html"><img src="cart.png" width="30px" height="30px"></a>
+            <img src="menu.png" class="menu-icon" onclick="menutoggle()">
+        </div>
+    </div>
+      <!-- single product details -->
+  <div class="small-container single-product">
+    <div class="row">
+        <div class="col-2">
+            <img src="Luka 2 'Trick Shot' PF.png" width="100%" id="ProductImg">
+
+            <div class="small-img-row">
+                <div class="small-img-col">
+                    <img src="Luka 2 'Trick Shot' PF.png" width="100%" class="small-img">
+                </div>
+                <div class="small-img-col">
+                    <img src="Luka 2 'Trick Shot' PF1.png" width="100%" class="small-img">
+                </div>
+                <div class="small-img-col">
+                    <img src="Luka 2 'Trick Shot' PF2.png" width="100%" class="small-img">
+                </div>
+                <div class="small-img-col">
+                    <img src="Luka 2 'Trick Shot' PF3.png" width="100%" class="small-img">
+                </div>
+            </div>
+        </div>
+        <div class="col-2">
+            <p>Basketball Shoes</p>
+            <h1>Luka 2 'Trick Shot' PF</h1>
+            <h4>₱7,395</h4>
+            
+            <!-- Size selection -->
+            <label for="size">Select Size:</label>
+            <select id="size">
+              <option>Select Size</option>
+              <option>40</option>
+              <option>41</option>
+              <option>42</option>
+              <option>43</option>
+            </select>
+
+            <input type="number" id="quantity" value="1">
+            <button onclick="addToCart()" class="btn">Add to Cart</button>
+
+
+            <h3>Product Details<i class='bx bx-right-indent' ></i></h3>
+            <br>
+            <p style="color: black;">Trick or treat? Luka's shots are often a bit of both, and this special edition Luka 2 celebrates those otherworldly buckets. Whether you're playing HORSE or working on your lay-up package, this performance-ready pair is designed to support your skills, with an emphasis on step-backs, side-steps and quick-stop action.</p>
+        </div>
+    </div>
+  </div>
+  <!-- title -->
+  <div class="small-container">
+    <div class="row row-2">
+      <h2>Related Products</h2>
+      <p>View More</p>
+    </div>
+  </div>
+
+
+  <!-- products -->
+
+    <div class="small-container">
+        <div class="row">
+            <div class="col-4">
+              <a href="product6.html"><img src="LeBron XX Premium EP.jpg"></a>
+              <h4>LeBron XX Premium EP</h4>
+              <h6>Basketball Shoes</h6>
+              <div class="rating">
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star-half'></i>
+              </div>
+              <p>₱11,295</p>
+            </div>
+          
+            <div class="col-4">
+              <a href="product5.html"><img src="Nike G.T. Jump 2 EP.jpg"></a>
+              <h4>Nike G.T. Jump 2 EP</h4>
+              <h6>Basketball Shoes</h6>
+              <div class="rating">
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bx-star'></i>
+              </div>
+              <p>₱10,295</p>
+            </div>
+          
+            <div class="col-4">
+              <a href="product7.html"><img src="Nike G.T. Hustle 2 GTE EP.jpg"></a>
+              <h4>Nike G.T. Hustle 2 GTE EP</h4>
+              <h6>Basketball Shoes</h6>
+              <div class="rating">
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star-half'></i>
+                <i class='bx bx-star'></i>
+              </div>
+              <p>₱9,895</p>
+            </div>
+          
+            <div class="col-4">
+              <a href="product8.html"><img src="Freak 5 (Team) EP.jpg"></a>
+              <h4>Freak (team) 5 EP</h4>
+              <h6>Basketball Shoes</h6>
+              <div class="rating">
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bx-star'></i>
+              </div>
+              <p>₱7,095</p>
+            </div>
+        </div> 
+    </div>
+    
+
+
+
+
+
+
+    <!-- footer -->
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col-1">
+            <h3>Download Our App</h3>
+            <p>Download App for Android and ios Mobile Phone</p>
+            <div class="app-logo">
+              <a href="https://play.google.com/store/apps/details?id=com.nike.omega&pcampaignid=web_share"><img src="google-play.png"></a>
+              <a href="https://apps.apple.com/us/app/nike-shoes-apparel-stories/id1095459556"><img src="app-store.png"></a>
+            </div>
+          </div>
+          <div class="footer-col-2">
+            <img src="Earl_Collection__1.png">
+            <p>Our goal is to responsibly provide many people with the enjoyment and advantages of basketball shoes.</p>
+          </div>
+          <div class="footer-col-3">
+            <h3>Follow Us</h3>
+            <ul>
+              <a href="https://www.facebook.com/NikeSportsPH?mibextid=rS40aB7S9Ucbxw6v"><li style="color: antiquewhite;">Facebook</li></a>
+              <a href="https://x.com/NikePHStore?s=20"><li style="color: antiquewhite;">Twitter</li></a>
+              <a href="https://www.instagram.com/nikephofficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><li style="color: antiquewhite;">Instagram</li></a>
+              <a href="https://www.tiktok.com/@nike?is_from_webapp=1&sender_device=pc"><li style="color: antiquewhite;">Tiktok</li></a>
+            </ul>
+          </div>
+        </div>
+        <hr>
+        <p class="copyright">Copyright 2024-Earl Nike Collection Store</p>
+      </div>
+    </div>
+    <!-- js toggle menu -->
+    <script>
+      var MenuItems = document.getElementById("MenuItems");
+
+      MenuItems.style.maxHeight = "0px";
+
+      function menutoggle(){
+        if( MenuItems.style.maxHeight == "0px")
+        {
+          MenuItems.style.maxHeight = "200px"
+        }
+        else
+        {
+          MenuItems.style.maxHeight = "0px"
+        }
+      }
+    </script>
+    </script>
+    <!-- js for product gallery -->
+    <script>
+      var ProductImg = document.getElementById("ProductImg");
+      var SmallImg = document.getElementsByClassName("small-img");
+
+          SmallImg[0].onclick = function()
+          {
+            ProductImg.src = SmallImg[0].src;
+          }
+          SmallImg[1].onclick = function()
+          {
+            ProductImg.src = SmallImg[1].src;
+          }
+          SmallImg[2].onclick = function()
+          {
+            ProductImg.src = SmallImg[2].src;
+          }
+          SmallImg[3].onclick = function()
+          {
+            ProductImg.src = SmallImg[3].src;
+          }
+
+    </script>
+<!-- add -->
+
+<script>
+  function addToCart() {
+    // Get the product details
+    var productName = "Luka 2 'Trick Shot' PF"; // Replace with your actual product name
+    var productPrice = 7395; // Replace with your actual product price
+    var productImage = "Luka 2 'Trick Shot' PF.png"; // Replace with the actual product image URL
+    var quantity = parseInt(document.getElementById("quantity").value);
+
+    // Get the selected size
+    var sizeElement = document.getElementById("size");
+    var selectedSize = sizeElement.options[sizeElement.selectedIndex].text;
+
+    var cartItem = {
+      name: productName,
+      price: productPrice,
+      image: productImage,
+      quantity: quantity,
+      size: selectedSize // Add the selected size to the cart item
+    };
+
+    // Check if cart exists in local storage
+    var cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Add the item to the cart
+    cart.push(cartItem);
+
+    // Update the cart in local storage
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    // Alert the user about adding to the cart (you can customize this part)
+    alert("Product added to the cart!");
+
+  
+  }
+</script>
+
+    
+</body>
+</html>
