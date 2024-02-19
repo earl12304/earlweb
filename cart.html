@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Earl Nike Collection Shop</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <style>
+  
+    .cart-image {
+      border: 2px solid black; 
+    }
+  </style>
+  
+</head>
+<body>
+    <div class="header">
+        <div class="navbar">
+            <div class="logo">
+                <img src="Earl_Collection__1.png" width="150px">
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="account.html">Account</a></li>
+                </ul>
+            </nav>
+            <a href="cart.html"><img src="cart.png" width="30px" height="30px"></a>
+            <img src="menu.png" class="menu-icon" onclick="menutoggle()">
+        </div>
+    </div>
+<!-- cart items details -->
+
+<div class="small-container cart-page">
+    <table id="cartTable">
+      <tr>
+        <th>Product</th>
+        <th>Name</th>
+        <th>Size</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Remove</th>
+        <th>Total</th>
+      </tr>
+      <!-- JavaScript code will dynamically populate this table based on the cart items -->
+    </table>
+  
+    <div class="total-price">
+      <table>
+        <tr>
+          <td>Total</td>
+          <td id="subtotal">₱0</td>
+        </tr>
+        <tr>
+          <td>Shipping Fee</td>
+          <td>₱100</td>
+        </tr>
+        <tr>
+          <td>Total</td>
+          <td id="total">₱0</td>
+        </tr>
+      </table>
+    </div>
+    <a href="checkout-page.html"><button onclick="checkout()" class="btn checkout-btn">Checkout</button></a>
+  </div>
+  
+      <!-- footer -->
+      <div class="footer">
+          <div class="container">
+            <div class="row">
+              <div class="footer-col-1">
+                <h3>Download Our App</h3>
+                <p>Download App for Android and ios Mobile Phone</p>
+                <div class="app-logo">
+                  <a href="https://play.google.com/store/apps/details?id=com.nike.omega&pcampaignid=web_share"><img src="google-play.png"></a>
+                  <a href="https://apps.apple.com/us/app/nike-shoes-apparel-stories/id1095459556"><img src="app-store.png"></a>
+                </div>
+              </div>
+              <div class="footer-col-2">
+                <img src="Earl_Collection__1.png">
+                <p>Our goal is to responsibly provide many people with the enjoyment and advantages of basketball shoes.</p>
+              </div>
+              <div class="footer-col-3">
+                <h3>Follow Us</h3>
+                <ul>
+                  <a href="https://www.facebook.com/NikeSportsPH?mibextid=rS40aB7S9Ucbxw6v"><li style="color: antiquewhite;">Facebook</li></a>
+                  <a href="https://x.com/NikePHStore?s=20"><li style="color: antiquewhite;">Twitter</li></a>
+                  <a href="https://www.instagram.com/nikephofficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><li style="color: antiquewhite;">Instagram</li></a>
+                  <a href="https://www.tiktok.com/@nike?is_from_webapp=1&sender_device=pc"><li style="color: antiquewhite;">Tiktok</li></a>
+                </ul>
+              </div>
+            </div>
+            <hr>
+            <p class="copyright">Copyright 2024-Earl Nike Collection Store</p>
+          </div>
+        </div>
+      
+      <!-- js toggle menu -->
+      <script>
+        var MenuItems = document.getElementById("MenuItems");
+  
+        MenuItems.style.maxHeight = "0px";
+  
+        function menutoggle(){
+          if( MenuItems.style.maxHeight == "0px")
+          {
+            MenuItems.style.maxHeight = "200px"
+          }
+          else
+          {
+            MenuItems.style.maxHeight = "0px"
+          }
+        }
+      </script>
+  
+  <!-- checkout -->
+  <script>
+    // Load and display cart items when the page loads
+    loadCart();
+  
+    function loadCart() {
+    var cart = JSON.parse(localStorage.getItem("cart")) || [];
+    var table = document.getElementById("cartTable");
+    
+    var subtotal = cart.reduce(function(total, item, index) {
+        var productTotal = item.price * item.quantity;
+        var row = table.insertRow(-1);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
+        var cell7 = row.insertCell(6); // Add a new cell for displaying size
+        
+        cell1.innerHTML = '<div class="image-container"><img src="' + item.image + '" class="cart-image"></div>';
+        cell2.innerHTML = item.name;
+        cell3.innerHTML = item.size; // Display the selected size
+        cell4.innerHTML = "₱" + item.price;
+        cell5.innerHTML = item.quantity;
+        cell6.innerHTML = '<button onclick="removeItem(' + index + ')" >Remove</button>';
+        cell7.innerHTML = "₱" + productTotal;
+
+        return total + productTotal;
+    }, 0);
+    
+    document.getElementById("subtotal").innerHTML = "₱" + subtotal;
+    
+    var total = subtotal + 100;
+    document.getElementById("total").innerHTML = "₱" + total;
+}
+
+    function removeItem(index) {
+      var cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.splice(index, 1); // Remove the item at the specified index
+      localStorage.setItem("cart", JSON.stringify(cart)); // Update the cart in local storage
+      location.reload(); // Reload the page to reflect the changes
+    }
+  </script>
+  <!-- disappear -->
+  <script>
+    // ... (unchanged JavaScript for loading and displaying cart items)
+  
+    // Calculate and display the total
+    var subtotal = cart.reduce(function(total, item) {
+      var productTotal = item.price * item.quantity;
+      var row = table.insertRow(-1);
+      var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
+      var cell3 = row.insertCell(2);
+      var cell4 = row.insertCell(3);
+  
+      cell1.innerHTML = item.name;
+      cell2.innerHTML = "₱" + item.price.toFixed(2);
+      cell3.innerHTML = item.quantity;
+      cell4.innerHTML = "₱" + productTotal.toFixed(2);
+  
+      return total + productTotal;
+    }, 0);
+  
+    document.getElementById("subtotal").innerHTML = "₱" + subtotal.toFixed(2);
+  
+    var total = subtotal + 100; // Add shipping fee (adjust as needed)
+    document.getElementById("total").innerHTML = "₱" + total.toFixed(2);
+  
+    function checkout() {
+      // Clear the cart in local storage
+      localStorage.removeItem("cart");
+  
+      // Redirect to the checkout page
+      window.location.href = "checkout.html";
+    }
+  </script>
+  
+  
+      
+  </body>
+  </html>
